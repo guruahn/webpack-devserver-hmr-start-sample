@@ -8,4 +8,4 @@ npm install
 
 ##참고
 - [webpack](http://webpack.github.io/)
-- [AriaFallah의  WebpackTutorial](https://github.com/AriaFallah/WebpackTutorial/tree/master/part1) 중 [Example 6 - The Development Server](https://github.com/AriaFallah/WebpackTutorial/tree/master/part1/example
+- [AriaFallah의  WebpackTutorial](https://github.com/AriaFallah/WebpackTutorial/tree/master/part1) 중 [Example 6 - The Development Server](https://github.com/AriaFallah/WebpackTutorial/tree/master/part1/example)
