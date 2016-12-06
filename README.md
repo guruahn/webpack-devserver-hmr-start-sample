@@ -1,5 +1,5 @@
 #Webpack-Devserver-Hmr-Start-Sample
-> dev-server + HotModuleReplacementPlugin + ES6-Babel 이 장착된 웹팩 기본 스타트 샘플입니다.
+> dev-server + HotModuleReplacementPlugin + ES6-Babel + S3 배포설정이 장착된 웹팩 기본 스타트 샘플입니다.
 
 ##설치
 ```
