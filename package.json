@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "deploy": "webpack -p --config webpack.config.deploy.js",
     "build": "webpack -p --config webpack.config.prod.js",
     "dev": "webpack-dev-server --watch --config webpack.config.dev.js"
   },
