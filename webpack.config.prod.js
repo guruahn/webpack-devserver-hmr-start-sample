@@ -1,26 +1,29 @@
 var webpack = require('webpack')
 var HtmlWebpackPlugin = require('html-webpack-plugin')
+var path = require('path')
+
 
 module.exports = {
   context: __dirname,
+  devtool : 'source-map',
+  watch: true,
   entry: [
-    'webpack-dev-server/client?http://localhost:8080',
-    'webpack/hot/dev-server',
     './app/index.js'
   ],
   output: {
-    filename: "./app/bundle.js"
+    filename: "./dist/bundle.js"
   },
   plugins: [
-    new webpack.HotModuleReplacementPlugin(),
+    new webpack.optimize.UglifyJsPlugin({
+      compressor: {
+        warnings: false,
+      },
+    }),
+    new webpack.optimize.OccurenceOrderPlugin(),
     new HtmlWebpackPlugin({
       template: './app/index.html'
     })
   ],
-  devServer: {
-    contentBase: './dist',
-    hot: true
-  },
   module: {
     loaders: [
       {
