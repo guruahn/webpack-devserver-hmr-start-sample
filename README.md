@@ -24,7 +24,7 @@ npm install deploy
 
 ##AWS CLI 배포 방법
 1. [aws CLI](https://aws.amazon.com/ko/cli/)를 설치.
-Mac Sierra 에서 awscli 가 정상적으로 설치가 되지 않는 경우, --ignore-installed six 옵션을 추가하여 설치한다
+Mac Sierra 에서 awscli 가 정상적으로 설치가 되지 않는 경우, --ignore-installed six 옵션을 추가하여 설치합니다
 
 ```
 sudo pip install awscli --ignore-installed six
