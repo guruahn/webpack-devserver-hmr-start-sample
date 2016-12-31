@@ -23,7 +23,7 @@ npm install deploy
 ```
 
 ##AWS CLI 배포 방법
-웹펙을 통하지 않고 AWS CLI를 통해서도 S3에 배포할 수 있다.
+웹펙을 통하지 않고 AWS CLI를 통해서도 S3에 배포할 수 있습니다.
 1. [aws CLI](https://aws.amazon.com/ko/cli/)를 설치.
 Mac Sierra 에서 awscli 가 정상적으로 설치가 되지 않는 경우, --ignore-installed six 옵션을 추가하여 설치합니다
 
