@@ -1,8 +1,5 @@
 var webpack = require('webpack')
 var HtmlWebpackPlugin = require('html-webpack-plugin')
-var ManifestPlugin = require('webpack-manifest-plugin');
-var ChunkManifestPlugin = require('chunk-manifest-webpack-plugin');
-var WebpackMd5Hash = require('webpack-md5-hash');
 var path = require('path');
 var fs  = require('fs');
 
