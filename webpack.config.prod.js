@@ -1,6 +1,10 @@
 var webpack = require('webpack')
 var HtmlWebpackPlugin = require('html-webpack-plugin')
-var path = require('path')
+var ManifestPlugin = require('webpack-manifest-plugin');
+var ChunkManifestPlugin = require('chunk-manifest-webpack-plugin');
+var WebpackMd5Hash = require('webpack-md5-hash');
+var path = require('path');
+var fs  = require('fs');
 
 
 module.exports = {
@@ -11,7 +15,8 @@ module.exports = {
     './app/index.js'
   ],
   output: {
-    filename: "./dist/bundle.js"
+    path: path.join(__dirname, 'dist'),
+    filename: "bundle-[hash].js"
   },
   plugins: [
     new webpack.optimize.UglifyJsPlugin({
@@ -22,7 +27,27 @@ module.exports = {
     new webpack.optimize.OccurenceOrderPlugin(),
     new HtmlWebpackPlugin({
       template: './app/index.html'
-    })
+    }),
+    function () {
+      this.plugin("done", function (stats) {
+        var replaceInFile = function (filePath, toReplace, replacement) {
+          var replacer = function (match) {
+              console.log('Replacing in %s: %s => %s', filePath, match, replacement);
+              return replacement
+          };
+          var str = fs.readFileSync(filePath, 'utf8');
+          var out = str.replace(new RegExp(toReplace, 'g'), replacer);
+          fs.writeFileSync(filePath, out);
+        };
+
+        var hash = stats.hash; // Build's hash, found in `stats` since build lifecycle is done.
+
+        replaceInFile(path.join(path.join(__dirname, 'dist'), 'index.html'),
+          'bundle.js',
+          'bundle-' + hash + '.js'
+        );
+      });
+    }
   ],
   module: {
     loaders: [
