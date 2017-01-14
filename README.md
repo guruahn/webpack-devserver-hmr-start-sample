@@ -42,6 +42,15 @@ aws cli설정에 관한 자세한 설명은 [Configuring the AWS Command Line In
 ```
 sh deploy-sample.sh
 ```
+위 배포 명령어를 실행하기 전에 `deploy-sample.sh` 파일에 몇 가지 설정을 직접해야합니다. 아래 코드는 여러분이 수정해야할 부분만을 보여주고 있습니다. 중괄호{}안의 내용을 본인의 설정에 맞게 기입한 후 사용하십시요.
+```
+BUCKET={your aws bucket}
+SOURCE_DIR={upload dir name}
+
+export AWS_ACCESS_KEY_ID={your aws access key id}
+export AWS_SECRET_ACCESS_KEY={your aws secret access key}
+export AWS_DEFAULT_REGION={your aws default region}
+```
 
 ##참고
 - [webpack](http://webpack.github.io/)
